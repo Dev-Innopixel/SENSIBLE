@@ -1,0 +1,53 @@
+<launch>
+
+	<!-- ARGUMENTS -->
+
+	<!-- robot pose [x, y, z] -->
+	<arg name="robot_pose"  doc="The pose of the robot spawn location." default="-x 0.1 -y 0.5"/>
+
+    <!-- -->
+	<arg name="no_objects"     default="true" />
+	<arg name="use_moveit"     default="true" />
+	<arg name="use_rviz"       default="true" />
+	<arg name="franka_controller" default="franka_joint_impedance_controller" />
+
+	<!-- GAZEBO -->
+
+	<!-- locate robot description -->
+	<param name="robot_description" command="$(find xacro)/xacro $(find franka_description)/robots/panda_physical_emulator.urdf.xacro"/>
+
+	<!-- Load parameters for the Cartesian Impedance Controller -->
+	<rosparam file = "$(find franka_simulator_controllers)/config/franka_simulator_controllers.yaml"/>
+
+	<!-- gazebo arguments -->
+	<arg name="paused" default="true"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="gui" default="true"/>
+	<arg name="headless" default="false"/>
+	<arg name="debug" default="false"/>
+
+	<!-- launch gazebo (empty world) -->
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<!-- <arg name="world_name" value="$(find franka_gazebo)/world/groundless.world"/> -->
+		<arg name="debug" value="$(arg debug)"/>
+		<arg name="gui" value="$(arg gui)"/>
+		<arg name="paused" value="$(arg paused)"/>
+		<arg name="use_sim_time" value="$(arg use_sim_time)"/>
+		<arg name="headless" value="$(arg headless)"/>
+	</include>
+
+	<!-- spawn object(s) -->
+	<!-- <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-database table -sdf -model table -x 0.4 -y 0.6 -z 0.64"/> -->
+
+	<!-- spawn URDF robot model -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model panda -J panda_joint1 0 -J panda_joint2 0 -J panda_joint3 0 -J panda_joint4 -1.57 -J panda_joint5 0 -J panda_joint6 1.57 -J panda_joint7 0 -J ball_jointy -1.57 -x 0.0 -y 0.0 -z 0.01"/>
+    <!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model panda -J panda_joint1 0 -J panda_joint2 0 -J panda_joint3 0 -J panda_joint4 -1.57 -J panda_joint5 0 -J panda_joint6 1.57 -J panda_joint7 0 -x 0.0 -y 0.0 -z 0.01"/> -->
+
+	<!-- Spawn Franka Controller -->
+	<node name="franka_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="$(arg franka_controller)"/>
+
+    <!-- Force Torque Sensor -->
+	<node name="force_torque_module" pkg="force_torque_sensor" type="force_torque_node" respawn="false" output="screen" args=""/>
+
+
+</launch>

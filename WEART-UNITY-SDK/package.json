@@ -1,0 +1,30 @@
+{
+  "name": "com.weart.sdk",
+  "displayName": "WEART SDK",
+  "version": "1.1.0",
+  "unity": "2019.4",
+  "description": "WEART SDK - 1.1.0",
+  "keywords": [
+    "WEART",
+    "Unity"
+  ],
+  "category": "Unity",
+  "samples": [
+    {
+      "displayName": "Simple Temperature",
+      "description": "This sample contains a very basic scene with one Touchable Cube and one finger Haptic Object for testing actuation",
+      "path": "Samples~/SimpleTemperature"
+    },
+    {
+      "displayName": "Haptic Hands",
+      "description": "This sample contains a ready to use prefab for a virtual hand having haptic controls",
+      "path": "Samples~/HapticHands"
+    },
+    {
+      "displayName": "Sample Demo",
+      "description": "This sample contains a ready to use demo with multiple interactions",
+      "path": "Samples~/SampleDemo"
+    }
+  ],
+  "type": "library"
+}

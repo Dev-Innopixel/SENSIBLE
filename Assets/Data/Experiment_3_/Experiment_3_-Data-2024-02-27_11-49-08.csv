@@ -1,0 +1,1 @@
+time,x_actual_x,x_actual_y,x_actual_z,x_desired_x,x_desired_y,x_desired_z,x_d_actual_x,x_d_actual_y,x_d_actual_z,x_d_desired_x,x_d_desired_y,x_d_desired_z,disturbance_x,disturbance_y,disturbance_z,force,force_error,tracking_error,stiffness,dotproduct
