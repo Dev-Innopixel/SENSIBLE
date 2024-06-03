@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
-  m_FogMode: 1
-  m_FogDensity: 0.005
+  m_FogMode: 3
+  m_FogDensity: 0.01
   m_LinearFogStart: 25
-  m_LinearFogEnd: 300
+  m_LinearFogEnd: 600
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -3856,27 +3856,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dc270b7b71a6264588f653172771af1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 300
+      value: 327.34167
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dc270b7b71a6264588f653172771af1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 300
+      value: 327.34167
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dc270b7b71a6264588f653172771af1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 109.113884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dc270b7b71a6264588f653172771af1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dc270b7b71a6264588f653172771af1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.9
+      value: -34.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dc270b7b71a6264588f653172771af1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -80.7
+      value: -97.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dc270b7b71a6264588f653172771af1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12204,6 +12204,10 @@ PrefabInstance:
       value: 26.991467
       objectReference: {fileID: 0}
     - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: far clip plane
+      value: 425
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_RenderingPath
       value: 1
       objectReference: {fileID: 0}
@@ -13396,16 +13400,28 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1323567515177542264, guid: d086593e39436084896ee59a6f0bcda8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.2242403
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323567515177542264, guid: d086593e39436084896ee59a6f0bcda8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.2242403
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323567515177542264, guid: d086593e39436084896ee59a6f0bcda8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.2242403
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323567515177542264, guid: d086593e39436084896ee59a6f0bcda8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.219997
+      value: 104.566505
       objectReference: {fileID: 0}
     - target: {fileID: 1323567515177542264, guid: d086593e39436084896ee59a6f0bcda8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.84
+      value: -33.73
       objectReference: {fileID: 0}
     - target: {fileID: 1323567515177542264, guid: d086593e39436084896ee59a6f0bcda8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.289999
+      value: -19.049004
       objectReference: {fileID: 0}
     - target: {fileID: 1323567515177542264, guid: d086593e39436084896ee59a6f0bcda8, type: 3}
       propertyPath: m_LocalRotation.w
